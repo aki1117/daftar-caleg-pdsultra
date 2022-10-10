@@ -17,7 +17,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gradient-to-br  from-blue-700 to-blue-4000 h-full antialiased leading-none font-sans">
+<body class="bg-gradient-to-b  from-blue-900 via-blue-600 to-blue-100 h-full antialiased leading-none font-sans">
     <div id="app">
         <header class="bg-blue-900 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
