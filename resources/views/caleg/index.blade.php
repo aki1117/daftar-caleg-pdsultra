@@ -26,7 +26,7 @@
                         href="/caleg/export/">Eksport Excel</a></button>
 
                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <table class="w-full   text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                             <tr>
                                 <th scope="col" class="py-3 px-6">
@@ -183,7 +183,7 @@
                                     {{ $data->riwayatdiklat }}
 
                                 </td>
-                                <td class="py-4 px-6 text-gray-900 whitespace-nowrap ">
+                                <td class="py-4 px-6 max-w-10 text-gray-900 whitespace-nowrap ">
                                     {{ $data->riwayatorganisasi }}
                                 </td>
                                 <td class="py-4 px-6 text-gray-900 whitespace-nowrap ">
@@ -201,19 +201,11 @@
                                         @method('DELETE')
                                         {{ method_field('DELETE') }}
                                         <button type="submit"
-                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none">Delete</button>
+                                            class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none">Delete</button>
                                     </form>
-
-
-
-
-
                                 </td>
                             </tr>
                             @endforeach
-
-
-
                         </tbody>
                     </table>
                 </div>
