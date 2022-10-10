@@ -10,19 +10,19 @@
                     src="{{ asset('image/maps.png') }}" alt="Indonesia">
                 <div
                     class="container mx-auto flex flex-col items-center justify-center  space-y-8 md:p-10 md:px-24 xl:px-48">
-                    <h1 class="text-5xl z-10 font-base leading-none text-center text-white">BERSAMA RAKYAT
+                    <h1 class="text-5xl z-10 font-bold leading-none text-center text-white">BERSAMA RAKYAT
                         MEMPERJUANGKAN
 
                     </h1>
-                    <span class="text-5xl z-10 font-base leading-none text-center text-red-500 font-bold">
+                    <span class="text-5xl z-10 leading-none text-center text-red-500 font-bold">
 
                         PERUBAHAN DAN PERBAIKAN
                     </span>
 
-                    <div
-                        class=" text-xl z-10 font-medium text-white  rounded-full py-5 px-7 text-center bg-blue-400 hover:bg-blue-300">
+                    <button
+                        class=" text-xl z-10 font-medium text-white  rounded-full py-5 px-7 text-center bg-blue-500 hover:bg-blue-300">
                         <a href="/pendaftaran">DAFTAR CALEG SEKARANG</a>
-                    </div>
+                    </button>
                     {{-- <div class="">
                         <img class="h-auto md:h-60 lg:h-60 " src="{{ asset('image/maps.png') }}" alt="Indonesia">
                     </div> --}}
