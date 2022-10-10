@@ -52,3 +52,5 @@ Route::post('/caleg/create', [CalegController::class, 'store'])->name('caleg.sto
 Route::get('/caleg/{caleg}/edit', [CalegController::class, 'edit'])->name('caleg.edit'); // Edit Mahasiswa
 Route::put('/caleg/{caleg}', [CalegController::class, 'update'])->name('caleg.update'); // Edit Mahasiswa
 Route::delete('/caleg/{caleg}/delete', [CalegController::class, 'destroy'])->name('caleg.destroy'); // Delete Mahasiswa
+
+Route::get('caleg/export/', [CalegController::class, 'export']);

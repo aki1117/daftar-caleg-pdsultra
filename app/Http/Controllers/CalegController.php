@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\CalegsExport;
 use App\Models\Caleg;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CalegController extends Controller
 {
@@ -11,6 +13,11 @@ class CalegController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function export()
+    {
+        return Excel::download(new CalegsExport, 'hasil-pendaftaran.xlsx');
     }
 
     /**

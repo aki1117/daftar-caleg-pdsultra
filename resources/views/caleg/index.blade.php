@@ -23,7 +23,7 @@
                     <a href="/caleg/create">Create</a></button>
                 <button type="button"
                     class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 "><a
-                        href="/caleg/eksport">Eksport Excel</a></button>
+                        href="/caleg/export/">Eksport Excel</a></button>
 
                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
