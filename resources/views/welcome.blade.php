@@ -4,23 +4,38 @@
 <main class="sm:container sm:mx-auto sm:mt-10">
     <div class="w-full sm:px-6">
 
-        @if (session('status'))
-            <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
-                {{ session('status') }}
+        <section class="py-6 my-5 rounded-lg ">
+            <div class="container mx-auto flex flex-col items-center justify-center  space-y-8 md:p-10 md:px-24 xl:px-48">
+                <h1 class="text-5xl font-base leading-none text-center text-white">BERSAMA RAKYAT
+                    MEMPERJUANGKAN
+
+                </h1>
+                <span class="text-5xl font-base leading-none text-center text-red-600 font-bold">
+
+                    PERUBAHAN DAN PERBAIKAN
+                </span>
+                </span>
+                <div
+                    class=" text-xl font-medium text-white ring ring-blue-800 rounded-full py-5 px-5 text-center hover:bg-blue-300">
+                    <a href="/pendaftaran">DAFTAR CALEG SEKARANG</a>
+                </div>
+                <div class="">
+                    <img class="h-auto md:h-60 lg:h-60" src="{{ asset('image/maps.png') }}" alt="Indonesia">
+                </div>
+
             </div>
-        @endif
+            <div class="">
+                <div class="flex justify-center">
+                    <img class="h-36 w-36 md:h-60 md:w-60" src="{{ asset('image/ahy.jpeg') }}" alt="Agus Hamurti Yodhoyono">
+                    <img class="h-36 w-36 md:h-60 md:w-60" src="{{ asset('image/teuku.jpeg') }}" alt="Teuku Riefky Harsya">
 
-        <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
+                    <img class="h-36 w-36 md:h-60 md:w-60" src="{{ asset('image/endang.jpeg') }}" alt="Muh. Endang">
+                    <img class="h-36 w-36 md:h-60 md:w-60" src="{{ asset('image/budhi.jpeg') }}" alt="S. Budhi Prasodjo">
+                </div>
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Welcome
-            </header>
+            </div>
 
-            {{-- <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
-            </div> --}}
+
         </section>
     </div>
 </main>

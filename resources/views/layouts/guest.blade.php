@@ -17,12 +17,12 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+<body class="bg-gradient-to-br  from-blue-700 to-blue-4000 h-full antialiased leading-none font-sans">
     <div id="app">
         <header class="bg-blue-900 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
-                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                    <a href="{{ url('/') }}" class="text-lg font-semibold uppercase text-gray-100 no-underline">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -30,7 +30,7 @@
                     <a class="no-underline font-bold hover:underline" href="/">HOME</a>
                     <a class="no-underline font-bold hover:underline" href="/pendaftaran">DAFTAR</a>
                     @guest
-                    <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('ADMIN') }}</a>
+                    <a class="no-underline hover:underline font-bold" href="{{ route('login') }}">{{ __('ADMIN') }}</a>
                     @if (Route::has('register'))
                     <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
@@ -45,6 +45,7 @@
                     </form> --}}
                     @endguest
                 </nav>
+                <img src="{{ asset('image/web-logo.png') }}" alt="" class="h-20">
             </div>
         </header>
 
