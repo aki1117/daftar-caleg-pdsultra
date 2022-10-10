@@ -27,13 +27,13 @@
                     </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/caleg">Hasil Pendafaran</a>
                     @guest
                     <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                     @if (Route::has('register'))
                     <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
                     @else
+                    <a class="no-underline font-bold hover:underline" href="/caleg">HASIL PENDAFTARAN</a>
                     <span>{{ Auth::user()->name }}</span>
 
                     <a href="{{ route('logout') }}" class="no-underline hover:underline" onclick="event.preventDefault();
