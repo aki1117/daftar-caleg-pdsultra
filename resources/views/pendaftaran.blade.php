@@ -56,7 +56,7 @@
                                 Telepon</label>
                             <input type="tel" id="phone" name="notelepon"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    -500 -500"
-                                placeholder="081392408350" required="">
+                                placeholder="081234567890" required="">
                         </div>
 
                         <div>
