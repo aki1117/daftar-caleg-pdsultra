@@ -71,30 +71,38 @@ class CalegController extends Controller
             // 'riwayatpenghargaan' => 'required',
         ]);
 
-        Caleg::create($request->post());
+        $caleg = Caleg::create($request->all());
+        // Caleg::create($request->all());
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+            $caleg->addMediaFromRequest('foto')->toMediaCollection('foto');
+        }
 
         // dd($request->all());
         return redirect()->route('caleg.index')->with('status', 'Caleg has been created successfully.');
     }
 
-    // // Edit Mahasiswa
-    // public function edit(Mahasiswa $mahasiswa)
-    // {
-    //     return view('mahasiswa.edit', compact('mahasiswa'));
-    // }
+    // Edit Mahasiswa
+    public function edit(Caleg $caleg)
+    {
+        return view('caleg.edit', compact('caleg'));
+    }
 
-    // public function update(Request $request, Mahasiswa $mahasiswa)
-    // {
-    //     $request->validate([
-    //         'nama' => 'required',
-    //         'nim' => 'required|max:11',
-    //         'alamat' => 'required',
-    //     ]);
+    public function update(Request $request, Caleg $caleg)
+    {
+        $request->validate([
+            // 'nama' => 'required',
+            // 'nim' => 'required|max:11',
+            // 'alamat' => 'required',
+        ]);
 
-    //     $mahasiswa->fill($request->post())->save();
+        $caleg->fill($request->all())->save();
+        // dd($request->all());
+        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
+            $caleg->addMediaFromRequest('foto')->toMediaCollection('foto');
+        }
 
-    //     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa Has Been updated successfully');
-    // }
+        return redirect()->route('caleg.index')->with('success', 'Mahasiswa Has Been updated successfully');
+    }
 
     // Delete Mahasiswa
     public function destroy(Caleg $caleg)

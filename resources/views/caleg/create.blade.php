@@ -20,14 +20,14 @@
             <div class="w-full p-6">
                 <form action="{{ route('caleg.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    {{-- <div class="py-3">
+                    <div class="py-3">
 
                         <label class="block mb-2 text-sm font-medium text-gray-900 " for="foto">Upload
                             Foto</label>
                         <input
                             class="block p-5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer  focus:outline-none   "
                             id="foto" type="file" name="foto">
-                    </div> --}}
+                    </div>
                     <div class="grid gap-6 mb-6 md:grid-cols-2">
 
                         <div>

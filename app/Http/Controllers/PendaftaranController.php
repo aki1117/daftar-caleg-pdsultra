@@ -40,35 +40,15 @@ class PendaftaranController extends Controller
             // 'riwayatpenghargaan' => 'required',
         ]);
 
-        Caleg::create($request->post());
+        $caleg = Caleg::create($request->all());
+        // Caleg::create($request->all());
+        if($request->hasFile('foto') && $request->file('foto')->isValid()){
+            $caleg->addMediaFromRequest('foto')->toMediaCollection('foto');
+        }
 
         // dd($request->all());
         return redirect()->route('pendaftaran')->with('status', 'Caleg has been created successfully.');
     }
 
-    // // Edit Mahasiswa
-    // public function edit(Mahasiswa $mahasiswa)
-    // {
-    //     return view('mahasiswa.edit', compact('mahasiswa'));
-    // }
 
-    // public function update(Request $request, Mahasiswa $mahasiswa)
-    // {
-    //     $request->validate([
-    //         'nama' => 'required',
-    //         'nim' => 'required|max:11',
-    //         'alamat' => 'required',
-    //     ]);
-
-    //     $mahasiswa->fill($request->post())->save();
-
-    //     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa Has Been updated successfully');
-    // }
-
-    // // Delete Mahasiswa
-    // public function destroy(Mahasiswa $mahasiswa)
-    // {
-    //     $mahasiswa->delete();
-    //     return redirect()->route('mahasiswa.index')->with('success', 'Mahasiswa has been deleted successfully');
-    // }
 }

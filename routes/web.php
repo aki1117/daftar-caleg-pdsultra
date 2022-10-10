@@ -51,4 +51,4 @@ Route::get('/caleg/create', [CalegController::class, 'create'])->name('caleg.cre
 Route::post('/caleg/create', [CalegController::class, 'store'])->name('caleg.store'); // Create Mahasiswa
 Route::get('/caleg/{caleg}/edit', [CalegController::class, 'edit'])->name('caleg.edit'); // Edit Mahasiswa
 Route::put('/caleg/{caleg}', [CalegController::class, 'update'])->name('caleg.update'); // Edit Mahasiswa
-Route::delete('/caleg/{caleg}delete', [CalegController::class, 'destroy'])->name('caleg.destroy'); // Delete Mahasiswa
+Route::delete('/caleg/{caleg}/delete', [CalegController::class, 'destroy'])->name('caleg.destroy'); // Delete Mahasiswa

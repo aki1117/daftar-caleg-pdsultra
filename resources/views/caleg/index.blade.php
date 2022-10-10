@@ -23,7 +23,7 @@
                     <a href="/caleg/create">Create</a></button>
                 <button type="button"
                     class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 "><a
-                        href="/caleg/eksport">Eksport</a></button>
+                        href="/caleg/eksport">Eksport Excel</a></button>
 
                 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -31,6 +31,9 @@
                             <tr>
                                 <th scope="col" class="py-3 px-6">
                                     ID
+                                </th>
+                                <th scope="col" class="py-3 px-6">
+                                    Foto
                                 </th>
                                 <th scope="col" class="py-3 px-6">
                                     Nama
@@ -117,6 +120,7 @@
                                 <td class="py-4 px-6 text-gray-900 whitespace-nowrap ">
                                     {{ $data->id }}
                                 </td>
+                                <td><img src="{{$data->getFirstMediaUrl('foto', 'thumb')}}" / width="220px"></td>
                                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
                                     {{ $data->nama }}
                                 </th>
@@ -189,29 +193,20 @@
                                     {{ $data->riwayatpenghargaan }}
                                 </td>
                                 <td class="py-4 px-auto text-right gap-10 flex">
-                                    <button type="button"
-                                        class="py-2 px-3 text-xs font-medium text-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  rounded-lg  mr-1 mb-1 ">View</button>
-                                    <button type="button"
-                                        class="py-2 px-3 text-xs font-medium text-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  rounded-lg  mr-1 mb-1 ">Edit</button>
-                                    <form action="{{ route('caleg.destroy', $data->id) }}" method="Post">
+                                    <a
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none "
+                                        href="{{ route('caleg.edit',$data->id) }}">Edit</a>
+                                    <form method="POST" action="{{ route('caleg.destroy', [$data->id]) }}">
                                         @csrf
                                         @method('DELETE')
+                                        {{ method_field('DELETE') }}
                                         <button type="submit"
-                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                            <a href="{{ route('caleg.destroy', $data->id) }}">Delete</a>
-
-                                        </button>
-
+                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2  focus:outline-none">Delete</button>
                                     </form>
-                                    {{-- <form action="{{ route('caleg.destroy', $data->id) }}" method="Post">
 
-                                        <a class="py-2 px-3 text-xs font-medium text-center text-white bg-red-700 border border-gray-300 focus:outline-none hover:bg-red-600 focus:ring-4 focus:ring-gray-200  rounded-lg  mr-1 mb-1 "
-                                            href="{{ route('caleg.edit',$data->id) }}">Edit</a>
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit"
-                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Delete</button>
-                                    </form> --}}
+
+
+
 
                                 </td>
                             </tr>
