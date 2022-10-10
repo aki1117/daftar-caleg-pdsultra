@@ -19,7 +19,7 @@
 
 <body class="bg-gradient-to-b  from-blue-800 via-blue-700 to-blue-200 h-full antialiased leading-none font-sans">
     <div id="app">
-        <header class="bg-blue-900 py-6">
+        <header class="bg-blue-700 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold uppercase text-gray-100 no-underline">
